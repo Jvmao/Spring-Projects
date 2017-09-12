@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Spring Project 1 - Internal Server Error</title>
+	 <!--Meta Tags-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+	
+    <!--Bootstrap and CSS from folder-->
+    <link rel="stylesheet" href="../../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" href="../../static/css/styles.css" th:href="@{/css/styles.css}"/>
+    
+    <!--Added from the Internet-->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'/>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'/>
+</head>
+<body>
+	<style>
+		#jb4{
+		background-size:cover;
+		background-image: url('/imgs/error500.png') !important ;
+		background-size: cover;
+		margin-bottom: 0;
+		background-position: center;
+		height: 659px;
+		width: 100%;
+		text-align:center;
+		}
+		
+		#btnError{
+		border: 2px solid;
+    	border-radius: 25px;
+    	width: 200px;
+		}
+	</style>
+	
+	<div class="jumbotron" id="jb4">
+		<div class="conatiner">
+			<div class="row-main">
+				<div class="col-xs-6">
+					<p style="text-align:center;font-size:30px"><strong>Error 505 - Internal Server Error</strong></p>
+					<p style="text-align:center">
+						<a class="btn btn-md btn-warning active" role="button" aria-pressed="true" 
+						th:href="@{/index}" id="btnError"><span class="fa fa-bolt"></span> HOME</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Latest compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+</body>
+</html>

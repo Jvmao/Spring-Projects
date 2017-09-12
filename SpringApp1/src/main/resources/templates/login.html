@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8"/>
+	<title>SPRING PROJECT 1</title>
+	<!--Meta Tags-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    <!--Bootstrap and CSS from folder-->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css" th:href="@{css/styles.css}"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/stylesLogin.css" th:href="@{css/stylesLogin.css}"/>
+
+    <!--Added from the Internet-->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'/>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'/>
+
+</head>
+
+<body>
+	<nav class="navbar sticky-top navbar-expand-sm navbar-toggleable-md navbar-findcond navbar-light bg-light mb-4" role="navigation">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#" th:href="@{/index}">
+        <img id="brandImage" src="../static/imgs/logo.png" th:src="@{imgs/logo.png}"/>
+      </a>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#" th:href="@{/index}">Home<span class="sr-only">(current)</span></a>
+          </li>
+
+          <li id="li2" class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="menu" id="dropdownMenu1">
+                Departments <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" role="menu">
+                <li><a href="#" class="dropdown-item">TECHNOLOGY</a></li>
+                <li class="dropdown-divider"></li>
+                <li><a href="#" class="dropdown-item">FASHION</a></li>
+                <li class="dropdown-divider"></li>
+                <li><a href="#" class="dropdown-item">E-CARS</a></li>
+              </ul>
+          </li>
+
+        </ul>
+      </div>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#" th:href="@{/login}">Login<span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" th:href="@{/register}">Register<span class="sr-only"></span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!--Formulario con Google APIS-->
+	<section class="jumbotron" id="jb1">
+	<div class="container">
+		<div class="row main">
+			<div class="main-login main-center">
+				<h4 id="h4L">WELCOME!!</h4>
+				<form class="" action="#" method="POST">
+					<div class="form-group">
+						<label for="name" class="cols-sm-2 control-label">User Name</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<!--Icons from http://fontawesome.io/icons/-->
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" REQUIRED="required" name="name" id="name"  placeholder="Enter Your User Name"/>
+								</div>
+							</div>
+					</div>
+
+
+					<div class="form-group">
+							<label for="password" class="cols-sm-2 control-label">Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span> 
+									<input type="password" class="form-control" REQUIRED="required" name="password" id="password"  placeholder="Enter Your Password"/>
+								</div>
+							</div>
+					</div>
+					<br/>
+
+					<div class="form-group ">
+						<input type="submit" id="buttonL" class="btn btn-warning btn-block login-button active" value="LOGIN"/>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	</section>
+
+	<!-- Latest compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <!--<script type="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../../static/js/bootstrap.min.js"></script>-->
+</body>
+
+<footer>
+	 <div class="container">
+        <div class="text-center center-block">
+                <p class="txt-railway"><span class="fa fa-hand-o-right"> </span> Follow Us <span class="fa fa-hand-o-left"></span></p>
+                  <!--Iconos añadidos desde el Template bootstrapcdn con la ruta específica de arriba-->
+                  <a href="#"><img src="../static/imgs/facebook24px.png" th:src="@{/imgs/facebook24px.png}"/></a>
+                  <a href="#"><img src="../static/imgs/instagram24px.png" th:src="@{/imgs/instagram24px.png}"/></a>
+                  <a href="#"><img src="../static/imgs/twitter24px.png" th:src="@{/imgs/twitter24px.png}"/></a>
+                  <a href="mailto:jvmao82@gmail.com"><img src="../static/imgs/google24px.png" th:src="@{/imgs/google24px.png}"/></a>
+                  <a href="#"><img src="../static/imgs/youtube24px.png" th:src="@{/imgs/youtube24px.png}"/></a>
+        </div>
+        <hr/>
+    </div>
+    <p style="text-align: center"><b>Copyright 2018</b></p>
+    <p id="fecha" align="center">
+            <script> /*Añadimos un Script para Obtener la Fecha*/
+              /*Definimos la Función para obtener la fecha*/
+              var f = new Date();
+              document.getElementById("fecha").innerHTML = (f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear());
+            </script>
+    </p>
+</footer>
+
+</html>

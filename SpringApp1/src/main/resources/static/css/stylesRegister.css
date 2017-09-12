@@ -1,0 +1,29 @@
+#jb2{
+	background-image: url('/imgs/cool.png') !important ;
+ 	font-family: 'Oxygen', sans-serif;
+	background-size: cover;
+	margin-bottom: 0;
+	background-position: center;
+	height: 625px;
+	width: 100%;
+}
+
+label{
+	color:red;
+}
+
+#buttonR:hover{
+	color:  #17202a ; /*Color Letra*/
+	background-color: #fff033;
+}
+
+#buttonC:hover{
+	color:  #FFFFFF ; 
+	background-color: #000000;
+}
+
+.main-center{
+ 	margin: 0 auto;
+ 	max-width: 500px;
+    padding: 10px 40px;
+}
