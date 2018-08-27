@@ -1,0 +1,16 @@
+#jb3{
+	background-size: cover;
+	background-image: url('/imgs/error404.jpg') !important;
+	background-size: cover;
+	margin-bottom: 0;
+	background-position: center;
+	height: 660px;
+	width: 100%;
+	text-align: center;
+}
+
+#btnError {
+	border: 2px solid;
+	border-radius: 25px;
+	width: 300px;
+}

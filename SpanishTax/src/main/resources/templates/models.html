@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+	<head>
+		<title>SPANISH TAX PROJECT</title>
+	 	<!--Meta Tags-->
+		<meta charset="UTF-8"/>
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    	<!--Add Bootstrap 4 from folder-->
+    	<!--CSS-->
+    	<link href="../../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+		<link href="../../static/css/styleStartPage.css" th:href="@{/css/styleModels.css}" rel="stylesheet" />
+		
+		<!-- Google Fonts -->
+    	<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'/>
+   		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'/>
+   		<link href="https://fonts.googleapis.com/css?family=Bad+Script|Merriweather" rel="stylesheet"> 
+   		<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+   		<link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet"> 
+
+	</head>
+
+	<body>
+		<!--Nav Bar-->
+		<nav class="navbar sticky-top navbar-toggleable-md navbar-light">
+		<!--<nav class="navbar sticky-top bg-transparent">-->
+					<button type="button" class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarCollapse">
+							<span class="navbar-toggler-icon"></span>
+					</button>
+					<a class="navbar-brand" href="#">
+						<!-- <img id="logoImage" src="../static/imgs/euro1.png" th:src="@/imgs/euro1.png">-->
+						<img id="logoImage" src="../../static/imgs/euro1.png" th:src="@{/imgs/euro1.png}">
+					</a>
+
+			<!--NavBar Options-->
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a href="#" th:href="@{/startPage}" id="homeColor" class="nav-link active"><b>HOME</b></a>
+					</li>
+				</ul>
+				<ul class="navbar-nav mr-sm-2">
+					<li class="nav-item">
+						<a href="#" th:href="@{/contact}" id="contactColor" class="nav-link active"><b>CONTACT</b></a>
+					</li>
+					<li class="nav-item">
+						<a href="#" id="corporateColor" class="nav-link"><b>+INFO</b></a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<!--Main Header-->
+		<h1>SPANISH TAX PROJECT</h1>
+		
+		<h2>MODELS</h2>
+		<div class="container-fluid">
+			<div class="row justify-content-md-center">
+				<div class="col col-lg-2">
+					<a href="#tax1">
+						<img id="taxForm1" src="../../static/imgs/taxForm1.png" th:src="@{/imgs/taxForm1.png}"></img>
+					</a>
+					<p><b>MODEL 322</b></p>
+				</div>
+				<div class="col col-lg-2">
+					<a href="#tax2">
+						<img id="taxForm2" src="../../static/imgs/taxForm2.png" th:src="@{/imgs/taxForm2.png}"></img>
+					</a>
+					<p><b>MODEL 349</b></p>
+				</div>
+				<div class="col col-lg-2">
+					<a href="#tax3">
+						<img id="taxForm3" src="../../static/imgs/taxForm3.png" th:src="@{/imgs/taxForm3.png}"></img>
+					</a>
+					<p><b>MODEL 390</b></p>
+				</div>
+			</div>
+		</div>
+		<br>
+		
+		<div id="tax1" class="container-fluid">
+			<p id="pTax1">Model 322 - Value Added Tax. Group of Entities.</p>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Info</th>
+						<th>Presentation</th>
+						<th>Accrual</th>
+						<th>Paying</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>This form is made for group of entities</td>
+						<td>For Periods in July - From 1 to 30 of next month</td>
+						<td>You must enter the four figures of the year corresponding to the monthly period for which you make the declaration. 01 = January , 02 = February, ...</td>
+						<td>Boxes 01 to 11 and 39 to 44, which are specific for reporting intra-group transactions, should be used only if the option for the established regime is applicable in the liquidation period that is declared.</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="row justify-content-md-center">
+				<img id="tech1" src="../../static/imgs/tech7.jpg" th:src="@{/imgs/tech7.jpg}"></img>
+			</div>
+			<br>
+		</div>
+		
+		<div id="tax2" class="container-fluid">
+			<p id="pTax2" >Model 349 - Declaration of intra-community operations.</p>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Info</th>
+						<th>Presentation</th>
+						<th>Accrual</th>
+						<th>Paying</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Model 349 is an informative statement in which individual entrepreneurs and companies that carry out intra-community transactions must detail these operations.</td>
+						<td>From 1 to 30 of January</td>
+						<td>You must enter the four figures of the year corresponding to the monthly period for which you make the declaration. 01 = January , 02 = February, ...</td>
+						<td>You have to do the operations in each box to get the total to pay.</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="row justify-content-md-center">
+				<img id="tech2" src="../../static/imgs/tech8.jpg" th:src="@{/imgs/tech8.jpg}"></img>
+			</div>
+			<br>
+		</div>
+		
+		<div id="tax3" class="container-fluid">
+			<p id="pTax3">Model 390 - Value Added Tax. Group of Entities.</p>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Info</th>
+						<th>Presentation</th>
+						<th>Accrual</th>
+						<th>Paying</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Those who must submit periodic self-assessments are obliged to submit this model</td>
+						<td>From 1 to 30 of January</td>
+						<td>You must enter the four figures of the year corresponding to the monthly period for which you make the declaration. 01 = January , 02 = February, ...</td>
+						<td>Boxes 84, 85 and 86</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="row justify-content-md-center">
+				<img id="tech3" src="../../static/imgs/tech9.jpg" th:src="@{/imgs/tech9.jpg}"></img>
+			</div>
+			<br>
+		</div>
+		
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	    <!-- JQUERY -->
+		<script src="/js/jquery.min.js"></script>
+
+		<!-- Popper.js -->
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+	    <!--JS-->
+    	<script src="/js/bootstrap.min.js"></script>
+    
+    	<!--JS BUNDLE-->
+    	<script src="/js/bootstrap.bundle.min.js"></script>
+	</body>
+	<br>
+	<footer id="footMain">
+		<p style="text-align: center"><b>Copyright 2018</b></p>
+			<p id="fecha" align="center">
+							<script> 
+							/*Define script to add date dynamically*/
+							var f = new Date(); 
+							document.getElementById("fecha").innerHTML = (f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear());
+							</script>
+		</p>
+	</footer>
+</html>

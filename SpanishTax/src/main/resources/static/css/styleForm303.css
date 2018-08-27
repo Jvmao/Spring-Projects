@@ -1,0 +1,44 @@
+nav{
+	background-color: #424242;
+}
+
+h1{
+	text-align: center;
+	background-color:  #36edea;
+	font-size: 50px;
+	font-family: cursive;
+}
+
+h2{
+	color: #ff9900;
+}
+
+#logoImage{
+	height: 60px;
+	width: 90px;
+}
+
+.input-group-text{
+	background-color: yellow;
+}
+
+#boxTAccrued{
+	background-color: blue;
+}
+
+#boxTotal{
+	background-color: green;
+	color: black;
+}
+
+#footMain{
+   background-color:   #7f8c8d;
+   margin-bottom: 0px;
+   /*position: fixed;*/
+   width: 100%;
+   position: absolute;
+   
+  	text-align: center;
+	font-family: 'Roboto Mono', monospace;
+	font-size: 20px;
+}

@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>TAX PROJECT</title>
+	 	<!--Meta Tags-->
+		<meta charset="UTF-8"/>
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+		<!--Add Bootstrap 4 from folder-->
+    	<!--CSS-->
+    	<link href="../../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+		<link href="../../static/css/styleForm303.css" th:href="@{/css/styleForm303.css}" rel="stylesheet" />
+		
+		<!-- Google Fonts -->
+    	<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'/>
+   		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'/>
+   		<link href="https://fonts.googleapis.com/css?family=Bad+Script|Merriweather" rel="stylesheet"> 
+   		<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+   		<link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet"> 
+	</head>
+	
+    <body>
+        <!--Nav Bar-->
+        <nav class="navbar sticky-top navbar-toggleable-md navbar-light">
+                    <button type="button" class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarCollapse">
+                            <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        <img id="logoImage" src="../../static/imgs/euro1.png" th:src="@{/imgs/euro1.png}">
+                    </a>
+
+            <!--NavBar Options-->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a href="#" th:href="@{/startPage}" id="homeColor" class="nav-link active"><b>HOME</b></a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mr-sm-2">
+                    <li class="nav-item">
+                        <a href="#" th:href="@{/contact}" id="contactColor" class="nav-link active"><b>CONTACT</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" id="corporateColor" class="nav-link"><b>+INFO</b></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!--Main Header-->
+        <h1>FORM 303 MONTHLY VAT</h1>
+
+        <div id="step1" class="container-fluid">
+        <form id="form1" th:action="@{/form303}" th:object="${personaData}" method="post">
+        	<h2 class="text-warning">STEP 1: IDENTIFICATION</h2>
+                <div class="form-row">
+                    <div class="col-md-2 mb-2">
+                        <label for="year">Ejercicio</label>
+                        <input type="text" class="form-control" id="year" placeholder="Year" th:field="*{year}" th:value="${year}" required/>
+                    </div>
+
+                    <div class="col-md-2 mb-2">
+                        <label for="period">Periodo</label>
+                        <input type="text" class="form-control" id="period" placeholder="Period" th:field="*{period}" th:value="${period}" required/>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="nif">NIF</label>
+                        <input type="text" class="form-control" id="nif" placeholder="Fiscal Number Identification" th:field="*{nif}" th:value="${nif}" required/>
+                    </div>
+               
+                    <div class="col-md-6 mb-5">
+                        <label for="name">Nombre o Razón Social</label>
+                        <input type="text" class="form-control" id="name" placeholder="Person or Company Name" th:field="*{name}" th:value="${name}" required/>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                  <th scope="col"></th>
+                                  <th scope="col">SI</th>
+                                  <th scope="col">NO</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row">¿Está inscrito en el Registro de devolución mensual (Art. 30 RIVA)? </th>
+                                  <td><input type="checkbox" class="cb1" onclick="ckBox1(this)"></td>
+                                  <td><input type="checkbox" class="cb1" onclick="ckBox1(this)"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">¿Tributa exclusivamente en régimen simplificado?</th>
+                                  <td><input type="checkbox" class="cb2" onclick="ckBox2(this)"></td>
+                                  <td><input type="checkbox" class="cb2" onclick="ckBox2(this)"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">¿Es autoliquidación conjunta? </th>
+                                  <td><input type="checkbox" class="cb3" onclick="ckBox3(this)"></td>
+                                  <td><input type="checkbox" class="cb3" onclick="ckBox3(this)"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">¿Ha sido declarado en concurso de acreedores en el presente período de liquidación? </th>
+                                  <td><input type="checkbox" class="cb4" onclick="ckBox4(this)"></td>
+                                  <td><input type="checkbox" class="cb4" onclick="ckBox4(this)"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">¿Ha optado por el régimen especial del criterio de Caja (art. 163 undecies LIVA)?  </th>
+                                  <td><input type="checkbox" class="cb5" onclick="ckBox5(this)"></td>
+                                  <td><input type="checkbox" class="cb5" onclick="ckBox5(this)"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">¿Es destinatario de operaciones a las que se aplique el régimen especial
+                                        del criterio de caja?  </th>
+                                  <td><input type="checkbox" class="cb6" onclick="ckBox6(this)"></td>
+                                  <td><input type="checkbox" class="cb6" onclick="ckBox6(this)"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">Opción por la aplicación de la prorrata especial (artículo 103.Dos.1º LIVA)   </th>
+                                  <td><input type="checkbox" class="cb7" onclick="ckBox7(this)"></td>
+                                  <td><input type="checkbox" class="cb7" onclick="ckBox7(this)"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">Revocación de la opción por la aplicación de la prorrata especial (artículo 
+                                        103.Dos.1º LIVA)   </th>
+                                  <td><input type="checkbox" class="cb8" onclick="ckBox8(this)"></td>
+                                  <td><input type="checkbox" class="cb8" onclick="ckBox8(this)"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">Exonerados de la Declaración-resumen anual del IVA, modelo 390:
+                                        ¿Existe volumen de operaciones (art. 121 LIVA)?  </th>
+                                  <td><input type="checkbox" class="cb9" onclick="ckBox9(this)"></td>
+                                  <td><input type="checkbox" class="cb9" onclick="ckBox9(this)"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="col">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                	<th>Fecha en que se dictó el auto de declaración de concurso</th>
+                                	<td><input type="Date" class="form-control col-sm-12" id="fechaConcurso" placeholder="dd/MM/yy"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <table class="table">
+                            <thead>
+                            	<tr>
+                            		<th>Si se ha dictado auto de declaración de concurso en este 
+                                    período indique el tipo de autoliquidación </th>
+                            	</tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td scope="row">Preconcursal</td>
+                                    <td><input type="checkbox" class="cb11" onclick="ckBox11(this)"></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Concursal</td>
+                                    <td><input type="checkbox" class="cb11" onclick="ckBox11(this)"></td>
+                                </tr>
+                                <tr>
+                                	<th>Accured</th>
+                                	<th>Deduction</th>
+                                	<th>Total</th>
+                                </tr>
+                                <tr>
+                                	<td><input id="totalAccured" class="form-control" type="text" name="accuredTotal" placeholder="Accured VAT" th:field="*{accured}" th:value="${accured}" required></td>
+                                	<td><input id="totalDeduction" class="form-control" type="text" name="deductionTotal" placeholder="Deduction" th:field="*{deduction}" th:value="${deduction}" required></td>
+                                	<td><input id="totalTax" class="form-control" type="text" name="Total" placeholder="Total Tax" th:field="*{total}" th:value="${total}" required></td>
+                                </tr>
+                                <tr>
+                                    <td>
+	                                    <button type="submit"  id="btnSaveData" class="btn btn-success">SEND DATA</button>
+                                    </td>
+                               		<td>
+                               			<div th:if="${result == 1}" class="alert alert-success">
+                               				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		    									<span aria-hidden="true">&times;</span>
+		 									</button>
+                               				<strong>SAVED DATA CORRECTLY!</strong>
+                               			</div>
+                               		</td>
+                               		<td>
+                               			<div th:if="${result == 0}" class="alert alert-danger">
+                               				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		    									<span aria-hidden="true">&times;</span>
+		  									</button>
+                               				<strong>ERROR.UNSAVED DATA!</strong>
+                               			</div>
+                               		</td>
+                                </tr>
+                                <tr>
+                                	<td><a th:href="@{/data/addData}" id="listData" class="btn btn-primary">LIST DB</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+		</form>
+		
+		<!-- ------------------------------------------------------------------------------------------------------------- -->
+		<div class="container-fluid">
+				<h2 class="text-warning">STEP 2: PAYING</h2>
+				<h3>IVA DEVENGADO / ACCRUED VAT</h3>
+				<div class="row">
+					<div class="col" style="">Regimen General / General Regime</div>
+					<div class="col">
+						<table class="table" id="tAccrued">
+							<thead>
+								<tr>
+									<th>Base Imponible / Tax Base</th>
+									<th>Tipo / Rate</th>
+									<th>Cuota / Fee</th>
+								</tr>
+
+							</thead>
+							<tbody>
+								<!-- Boxes 1 to 3 -->
+								<tr>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">1</span>
+											</div>
+											<input id="box1" type="number" class="form-control"
+												placeholder="Box 1" aria-describedby="box1" required>
+										</div>
+									</td>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">2</span>
+											</div>
+											<input id="box2" type="number" class="form-control"
+												placeholder="Box 2" aria-describedby="box2" required>
+										</div>
+									</td>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">3</span>
+											</div>
+											<input id="box3" type="number" class="form-control"
+												placeholder="Box 3" aria-describedby="box3" required>
+										</div>
+									</td>
+								</tr>
+								<!-- Boxes 4 to 6 -->
+								<tr>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">4</span>
+											</div>
+											<input id="box4" type="number" class="form-control"
+												placeholder="Box 4" aria-describedby="box4" required>
+										</div>
+									</td>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">5</span>
+											</div>
+											<input id="box5" type="number" class="form-control"
+												placeholder="Box 5" aria-describedby="box5" required>
+										</div>
+									</td>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">6</span>
+											</div>
+											<input id="box6" type="number" class="form-control"
+												placeholder="Box 6" aria-describedby="box6" required>
+										</div>
+									</td>
+								</tr>
+								<!-- Boxes 7 to 9 -->
+								<tr>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">7</span>
+											</div>
+											<input id="box7" type="number" class="form-control"
+												placeholder="Box 7" aria-describedby="box7" required>
+										</div>
+									</td>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">8</span>
+											</div>
+											<input id="box8" type="number" class="form-control"
+												placeholder="Box 8" aria-describedby="box8" required>
+										</div>
+									</td>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">9</span>
+											</div>
+											<input id="box9" type="number" class="form-control"
+												placeholder="Box 9" aria-describedby="box9" required>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col" style="">Adquisiciones intracomunitarias de
+						bienes y servicios / Intra-community Acquisitions</div>
+					<div class="col">
+						<table class="table">
+							<!-- Boxes 10 to 11 -->
+							<thead>
+								<tr>
+									<th>Base Imponible / Tax Base</th>
+									<th>Cuota / Fee</th>
+								</tr>
+							</thead>
+							<tr>
+								<td>
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text">10</span>
+										</div>
+										<input id="box10" type="number" class="form-control"
+											placeholder="Box 10" aria-describedby="box10" required>
+									</div>
+								</td>
+								<td>
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text">11</span>
+										</div>
+										<input id="box11" type="number" class="form-control"
+											placeholder="Box 11" aria-describedby="box11" required>
+									</div>
+								</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col" style="">Otras operaciones con inversión del
+						sujeto pasivo(excepto. adq. intracom) /Other operations with
+						passive subject investment</div>
+					<div class="col">
+						<table class="table">
+							<!-- Boxes 12 to 13 -->
+							<tr>
+								<td>
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text">12</span>
+										</div>
+										<input id="box12" type="number" class="form-control"
+											placeholder="Box 12" aria-describedby="box12" required>
+									</div>
+								</td>
+								<td>
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text">13</span>
+										</div>
+										<input id="box13" type="number" class="form-control"
+											placeholder="Box 13" aria-describedby="box13" required>
+									</div>
+								</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col" style="">Modificación bases y cuotas /
+						Modification of bases and fees</div>
+					<div class="col">
+						<table class="table">
+							<!-- Boxes 14 to 15 -->
+							<tr>
+								<td>
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text">14</span>
+										</div>
+										<input id="box14" type="number" class="form-control"
+											placeholder="Box 14" aria-describedby="box14" required>
+									</div>
+								</td>
+								<td>
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text">15</span>
+										</div>
+										<input id="box15" type="number" class="form-control"
+											placeholder="Box 15" aria-describedby="box15" required>
+									</div>
+								</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col" style="">Recargo equivalencia / Equivalence
+						Surcharge</div>
+					<div class="col">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>Base Imponible / Tax Base</th>
+									<th>Tipo / Rate</th>
+									<th>Cuota / Fee</th>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- Boxes 16 to 18-->
+								<tr>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">16</span>
+											</div>
+											<input id="box16" type="number" class="form-control"
+												placeholder="Box 16" aria-describedby="box16" required>
+										</div>
+									</td>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">17</span>
+											</div>
+											<input id="box17" type="number" class="form-control"
+												placeholder="Box 17" aria-describedby="box17" required>
+										</div>
+									</td>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">18</span>
+											</div>
+											<input id="box18" type="number" class="form-control"
+												placeholder="Box 18" aria-describedby="box18" required>
+										</div>
+									</td>
+								</tr>
+
+								<!-- Boxes 19 to 21-->
+								<tr>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">19</span>
+											</div>
+											<input id="box19" type="number" class="form-control"
+												placeholder="Box 19" aria-describedby="box19" required>
+										</div>
+									</td>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">20</span>
+											</div>
+											<input id="box20" type="number" class="form-control"
+												placeholder="Box 20" aria-describedby="box20" required>
+										</div>
+									</td>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">21</span>
+											</div>
+											<input id="box21" type="number" class="form-control"
+												placeholder="Box 21" aria-describedby="box21" required>
+										</div>
+									</td>
+								</tr>
+
+								<!-- Boxes 22 to 24-->
+								<tr>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">22</span>
+											</div>
+											<input id="box22" type="number" class="form-control"
+												placeholder="Box 22" aria-describedby="box22" required>
+										</div>
+									</td>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">23</span>
+											</div>
+											<input id="box23" type="number" class="form-control"
+												placeholder="Box 23" aria-describedby="box23" required>
+										</div>
+									</td>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">24</span>
+											</div>
+											<input id="box24" type="number" class="form-control"
+												placeholder="Box 24" aria-describedby="box24" required>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col" style="">Modificaciones bases y cuotas del
+						recargo de equivalencia / Modifications bases and quotas
+						equivalence surcharge</div>
+					<div class="col">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>Base Imponible / Tax Base</th>
+									<th>Cuota / Fee</th>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- Boxes 25 and 26-->
+								<tr>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">25</span>
+											</div>
+											<input id="box25" type="number" class="form-control"
+												placeholder="Box 25" aria-describedby="box25" required>
+										</div>
+									</td>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">26</span>
+											</div>
+											<input id="box26" type="number" class="form-control"
+												placeholder="Box 26" aria-describedby="box26" required>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col" style="">
+						<b>Total Cuota Devengada / Total accrued fee
+							(03+06+09+11+13+15+18+21+24+26)</b>
+					</div>
+					<div class="col">
+						<table class="table">
+							<tbody>
+								<tr>
+									<td><button id="btnVat1"
+											class="btn btn-primary" onclick="total()">TOTAL
+											ACCRUED VAT</button></td>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text" id="boxTAccrued"
+													style="color: #f39c12">27</span>
+											</div>
+											<input id="totalCasillas1" type="text" class="form-control"
+												placeholder="TOTAL ACCRUED VAT"
+												aria-describedby="boxTAccrued" disabled>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<!-- ------------------------------------------------------------------------------------------------------------- -->
+				<h3>IVA DEDUCIBLE / DEDUCTIBLE VAT</h3>
+				<div class="row">
+					<div class="col" style="">Por cuotas soportadas en
+						operaciones interiores corrientes / By quotas supported in current
+						internal operations</div>
+					<div class="col">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>Base Imponible / Tax Base</th>
+									<th>Cuota / Fee</th>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- Boxes 28 and 29 -->
+								<tr>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">28</span>
+											</div>
+											<input id="box28" type="number" class="form-control"
+												placeholder="Box 28" aria-describedby="box28" required>
+										</div>
+									</td>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">29</span>
+											</div>
+											<input id="box29" type="number" class="form-control"
+												placeholder="Box 29" aria-describedby="box29" required>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col" style="">Por cuotas soportadas en
+						operaciones interiores con bienes de inversión / For fees
+						supported in internal operations with investment goods</div>
+					<div class="col">
+						<table class="table">
+							<tbody>
+								<!-- Boxes 30 and 31 -->
+								<tr>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">30</span>
+											</div>
+											<input id="box30" type="number" class="form-control"
+												placeholder="Box 30" aria-describedby="box30" required>
+										</div>
+									</td>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">31</span>
+											</div>
+											<input id="box31" type="number" class="form-control"
+												placeholder="Box 31" aria-describedby="box31" required>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col" style="">Por cuotas soportadas en las
+						importaciones de bienes corrientes / By fees supported on imports
+						of current goods</div>
+					<div class="col">
+						<table class="table">
+							<tbody>
+								<!-- Boxes 32 and 33 -->
+								<tr>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">32</span>
+											</div>
+											<input id="box32" type="number" class="form-control"
+												placeholder="Box 32" aria-describedby="box32" required>
+										</div>
+									</td>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">33</span>
+											</div>
+											<input id="box33" type="number" class="form-control"
+												placeholder="Box 33" aria-describedby="box33" required>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col" style="">Por cuotas soportadas en las
+						importaciones de bienes de inversión / For fees supported on
+						imports of investment goods</div>
+					<div class="col">
+						<table class="table">
+							<tbody>
+								<!-- Boxes 34 and 35 -->
+								<tr>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">34</span>
+											</div>
+											<input id="box34" type="number" class="form-control"
+												placeholder="Box 34" aria-describedby="box34" required>
+										</div>
+									</td>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">35</span>
+											</div>
+											<input id="box35" type="number" class="form-control"
+												placeholder="Box 35" aria-describedby="box35" required>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col" style="">En adquisiciones intracomunitarias
+						de bienes y servicios corrientes / In intra-community acquisitions
+						of current goods and services</div>
+					<div class="col">
+						<table class="table">
+							<tbody>
+								<!-- Boxes 36 and 37 -->
+								<tr>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">36</span>
+											</div>
+											<input id="box36" type="number" class="form-control"
+												placeholder="Box 36" aria-describedby="box36" required>
+										</div>
+									</td>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">37</span>
+											</div>
+											<input id="box37" type="number" class="form-control"
+												placeholder="Box 37" aria-describedby="box37" required>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col" style="">En adquisiciones intracomunitarias
+						de bienes de inversión / In intra-community acquisitions of
+						investment goods</div>
+					<div class="col">
+						<table class="table">
+							<tbody>
+								<!-- Boxes 38 and 39 -->
+								<tr>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">38</span>
+											</div>
+											<input id="box38" type="number" class="form-control"
+												placeholder="Box 38" aria-describedby="box38" required>
+										</div>
+									</td>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">39</span>
+											</div>
+											<input id="box39" type="number" class="form-control"
+												placeholder="Box 39" aria-describedby="box39" required>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col" style="">Rectificación de deducciones /
+						Rectification of deductions</div>
+					<div class="col">
+						<table class="table">
+							<tbody>
+								<!-- Boxes 40 and 41 -->
+								<tr>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">40</span>
+											</div>
+											<input id="box40" type="number" class="form-control"
+												placeholder="Box 40" aria-describedby="box40" required>
+										</div>
+									</td>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">41</span>
+											</div>
+											<input id="box41" type="number" class="form-control"
+												placeholder="Box 41" aria-describedby="box41" required>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col" style="">Compensaciones Régimen Especial
+						A.G. y P / Compensations Special Regime A.G. and P</div>
+					<div class="col">
+						<table class="table">
+							<tbody>
+								<!--BOX 42 -->
+								<tr>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">42</span>
+											</div>
+											<input id="box42" type="number" class="form-control col-md-5"
+												placeholder="Box 42" aria-describedby="box42" required>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col" style="">Regularización bienes de inversión
+						/ Regularization of investment goods</div>
+					<div class="col">
+						<table class="table">
+							<tbody>
+								<!--BOX 43 -->
+								<tr>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">43</span>
+											</div>
+											<input id="box43" type="number" class="form-control col-md-5"
+												placeholder="Box 43" aria-describedby="box43" required>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col" style="">Regularización por aplicación del
+						porcentaje definitivo de prorrata / Regularization by application
+						of the final proportion of pro-rata</div>
+					<div class="col">
+						<table class="table">
+							<tbody>
+								<!--BOX 44 -->
+								<tr>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">44</span>
+											</div>
+											<input id="box44" type="number" class="form-control col-md-5"
+												placeholder="Box 44" aria-describedby="box44" required>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<hr>
+				<div class="row">
+					<div class="col" style="">
+						<b>Total a Deducir / Total to deduct
+							(29+31+33+35+37+39+41+42++43+44)</b>
+					</div>
+					<div class="col">
+						<table class="table">
+							<tbody>
+								<tr>
+									<td><button id="idVat2"
+											class="btn btn-primary mb-3 active" onclick="total2()"
+											data-toggle="button" aria-pressed="true">TOTAL
+											DEDUCTION</button></td>
+									<td>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text" id="boxTAccrued"
+													style="color: #f39c12">45</span>
+											</div>
+											<input id="totalCasillas2" type="text" class="form-control"
+												placeholder="TOTAL TO DEDUCT" aria-describedby="boxTAccrued"
+												disabled>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<hr>
+				<div class="row">
+					<div class="col">
+						<button id="btnTotalAll" onclick="totalAll()"
+							class="btn btn-success" data-toggle="button" aria-pressed="true">
+							<b>TOTAL (27-45)</b>
+						</button>
+						<button type="reset" onclick="clearAll()" class="btn btn-warning">RESET</button>
+					</div>
+					<div class="col">
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="boxTotal"><b>46</b></span>
+							</div>
+							<input id="totalAll" type="text" class="form-control"
+								placeholder="TOTAL" aria-describedby="boxTotal" disabled>
+						</div>
+					</div>
+				</div>
+				<hr>
+			</div>
+		<!-- ------------------------------------------------------------------------------------------------------------- -->
+      </div>
+
+	<!-- -------------------------------------------------------------------------------------------------------------- -->
+	
+	<script src="/js/scriptOperaciones.js" type="text/javascript"></script>
+
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	    <!-- JQUERY -->
+		<script src="/js/jquery.min.js"></script>
+
+		<!-- Popper.js -->
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+	    <!--JS-->
+    	<script src="/js/bootstrap.min.js"></script>
+    
+    	<!--JS BUNDLE-->
+    	<script src="/js/bootstrap.bundle.min.js"></script>
+    </body>
+
+    <footer id="footMain">
+        <p style="text-align: center"><b>Copyright 2018</b></p>
+            <p id="fecha" align="center">
+                            <script> /*Añadimos un Script para Obtener la Fecha*/
+                            /*Definimos la Función para obtener la fecha*/
+                            var f = new Date(); 
+                            document.getElementById("fecha").innerHTML = (f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear());
+                            </script>
+        </p>
+    </footer>
+</html>

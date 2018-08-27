@@ -1,0 +1,84 @@
+nav{
+	background-color: #424242;
+}
+
+h1{
+	text-align: center;
+	background-color: #FFBF00;
+	font-size: 50px;
+	font-family: 'Oxygen';
+	margin-bottom: 0px;
+}
+
+#logoImage{
+	height: 60px;
+	width: 90px;
+}
+
+/*Carousel Indicators*/
+.carousel-indicators li{
+   	border-radius: 12px;
+    width: 12px;
+    height: 12px;
+    background-color: #404040;
+ }
+ 
+ /*Carousel Controls*/
+ #left1{
+ 	font-size: 50px;
+ 	color: red;
+ }
+ 
+ #right1{
+	font-size: 50px;
+	color: red;
+}
+ 
+ #h3Pay{
+	color:  #FFC300;
+	font-family: 'Passion One';
+	font-size: 60px;
+	align-content: center;
+}
+
+#h3Fill{
+	color:  #FFC300;
+	font-family: 'Passion One';
+	font-size: 60px;
+}
+
+#h3Info{
+	color:  #FFC300;
+	font-family: 'Passion One';
+	font-size: 60px;
+}
+
+/*Images Cards*/
+#tax4{
+	height: 300px;
+	width: 100px;
+}
+
+#tax5{
+	height: 300px;
+	width: 100px;
+}
+
+#tax6{
+	height: 300px;
+	width: 100px;
+}
+/***************************/
+
+
+
+#footMain{
+	background-color:   #7f8c8d;
+	margin-bottom: 0px;
+	width: 100%;
+   	position: absolute;
+   	
+   	text-align: center;
+	font-family: 'Roboto Mono', monospace;
+	font-size: 20px;
+}

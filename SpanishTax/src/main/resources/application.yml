@@ -1,0 +1,36 @@
+#Spring Properties
+spring:
+  mvc:
+    favicon:
+      enabled: true
+    date-format:  dd/MM/yyyy
+
+  thymeleaf:
+      cache: false
+  
+  couchbase:
+    bucket:
+      name: default
+      
+  #Data Properties
+  datasource:
+    url: jdbc:mysql://localhost:3306/SpanishTaxdb?useSSL=false
+    username: root
+    password: Naizuore1x
+     
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+              
+server:
+  port: 8080
+
+ 
+  
+  
+  

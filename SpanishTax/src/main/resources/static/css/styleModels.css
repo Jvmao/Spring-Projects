@@ -1,0 +1,79 @@
+nav{
+	background-color: #424242;
+	/**background-color: linear-gradient(#000,#0000) !important;**/
+}
+
+
+h1{
+	text-align: center;
+	background-color: #FFBF00;
+	font-size: 50px;
+	font-family: 'Oxygen';
+}
+
+#logoImage{
+	height: 60px;
+	width: 90px;
+}
+
+h2{
+	text-align: center;
+	font-size: 30px;
+	font-family: 'Roboto Mono', monospace;
+}
+
+img{
+	height: 200px;
+	width: 200px;
+}
+
+#tech1{
+	height: 200px;
+	width: 300px;
+}
+
+#tech2{
+	height: 200px;
+	width: 300px;
+}
+
+#tech3{
+	height: 200px;
+	width: 300px;
+}
+
+p{
+	text-align: center;
+	font-family: 'Roboto Mono', monospace;
+	font-size: 20px;
+}
+
+#pTax1{
+	text-align: center;
+	background-color: #00FF00;
+	font-family: 'Jua', sans-serif;
+}
+
+#pTax2{
+	text-align: center;
+	background-color: #00FF00;
+	font-family: 'Jua', sans-serif;
+}
+
+#pTax3{
+	text-align: center;
+	background-color: #00FF00;
+	font-family: 'Jua', sans-serif;
+}
+
+table,th,td{
+	border: 2px solid black;
+	border-collapse: collapse;
+}
+
+#footMain{
+	background-color:   #7f8c8d;
+	margin-bottom: 0px;
+	width: 100%;
+   	position: absolute;
+}

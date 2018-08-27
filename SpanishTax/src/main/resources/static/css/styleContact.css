@@ -1,0 +1,106 @@
+nav{
+	background-color: #424242;
+	/**background-color: linear-gradient(#000,#0000) !important;**/
+}
+
+h1{
+	text-align: center;
+	background-color: #FFBF00;
+	font-size: 50px;
+	font-family: 'Oxygen';
+	margin-bottom: 0;
+}
+
+#logoImage{
+	height: 60px;
+	width: 90px;
+}
+
+h2{
+	text-align: center;
+	font-size: 30px;
+	font-family: 'Roboto Mono', monospace;
+}
+
+
+#sec1{
+	/*background:url(../../static/imgs/tax1.jpg);*/
+	background:linear-gradient(red, blue);
+ 	font-family: 'Oxygen', sans-serif;
+	background-size: cover;
+	margin-bottom: 0px;
+}
+
+#h4C{
+	text-align: center;
+	font-family: 'Jua';
+	color:  #33ffd7;
+}
+
+#mainC{
+	margin-top: 30px;
+ 	margin: 0 auto;
+ 	max-width: 500px;
+    padding: 10px 40px;
+	background:#117a65;
+	color: #FFF;
+    text-shadow: none;
+	-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+    -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+}
+
+#buttonC:hover{
+	color:  #17202a ; /*Color Letra*/
+	background-color: #fff033;
+}
+
+h3{
+	text-align: center;
+	font-family: 'Jua';
+}
+
+#div1{
+	background:linear-gradient(blue, red);
+	margin-bottom:0px;
+}
+
+#logo1{
+	height: 150px;
+	width: 150px;
+}
+
+#logo2{
+	height: 150px;
+	width: 150px;
+}
+
+#logo3{
+	height: 150px;
+	width: 150px;
+}
+
+#logo4{
+	height: 150px;
+	width: 150px;
+}
+
+#logo5{
+	height: 150px;
+	width: 150px;
+}
+
+#logo6{
+	height: 150px;
+	width: 150px;
+}
+
+#footMain{
+	background-color:   #7f8c8d;
+	width: 100%;
+   	position: absolute;
+   	
+   	text-align: center;
+	font-family: 'Roboto Mono', monospace;
+	font-size: 20px;
+}

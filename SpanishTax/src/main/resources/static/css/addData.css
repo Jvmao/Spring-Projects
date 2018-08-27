@@ -1,0 +1,35 @@
+nav{
+	background-color: #424242;
+}
+
+h1{
+	text-align: center;
+	background-color:  #36edea;
+	font-size: 50px;
+	font-family: cursive;
+}
+
+
+#logoImage{
+	height: 60px;
+	width: 90px;
+}
+
+#btnBack303 {
+	border: 2px solid;
+	border-radius: 25px;
+	width: 300px;
+	text-align: center;
+}
+
+#footMain{
+   background-color:   #7f8c8d;
+   margin-bottom: 0px;
+   /*position: fixed;*/
+   width: 100%;
+   position: absolute;
+   
+   	text-align: center;
+	font-family: 'Roboto Mono', monospace;
+	font-size: 20px;
+}

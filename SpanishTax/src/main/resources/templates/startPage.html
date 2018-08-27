@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+	<head>
+		<title>SPANISH TAX PROJECT</title>
+	 	<!--Meta Tags-->
+		<meta charset="UTF-8"/>
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    	<!--Add Bootstrap 4 from folder-->
+    	<!--CSS-->
+    	<link href="../../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+		<link href="../../static/css/styleStartPage.css" th:href="@{/css/styleStartPage.css}" rel="stylesheet" />
+		
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+		
+		<!-- Google Fonts -->
+    	<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'/>
+   		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'/>
+   		<link href="https://fonts.googleapis.com/css?family=Bad+Script|Merriweather" rel="stylesheet">
+   		<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+   		<link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet"> 
+   		
+
+	</head>
+
+	<body>
+		<!--Nav Bar-->
+		<nav class="navbar sticky-top navbar-toggleable-md navbar-light">
+					<button type="button" class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarCollapse">
+							<span class="navbar-toggler-icon"></span>
+					</button>
+					<a class="navbar-brand" href="#">
+						<!-- <img id="logoImage" src="../static/imgs/euro1.png" th:src="@/imgs/euro1.png">-->
+						<img id="logoImage" src="../../static/imgs/euro1.png" th:src="@{/imgs/euro1.png}">
+					</a>
+
+			<!--NavBar Options-->
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a href="#" th:href="@{/startPage}" id="homeColor" class="nav-link active"><b>HOME</b></a>
+					</li>
+				</ul>
+				<ul class="navbar-nav mr-sm-2">
+					<li class="nav-item">
+						<a href="#" th:href="@{/contact}" id="contactColor" class="nav-link active"><b>CONTACT</b></a>
+					</li>
+					<li class="nav-item">
+						<a href="#" id="corporateColor" class="nav-link"><b>+INFO</b></a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<!--Main Header-->
+		<h1>SPANISH TAX PROJECT</h1>
+		
+		<!-- Show a message if the result is 1 or 0 from contact.html -->
+		<!--<div th:if="${final == 1}" class="alert alert-success" role="alert">Added Successfully!!!</div>-->
+		<div class="alert alert-success alert-dismissible fade show" th:if="${final == 1}" role="alert">
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		    <span aria-hidden="true">&times;</span>
+		  </button>
+		  <strong>Your Query has been sent correctly!!!</strong>
+		</div>
+		<!--<div th:if="${final == 0}" class="alert alert-danger" role="alert"></div>-->
+		<div class="alert alert-danger alert-dismissible fade show" th:if="${final == 0}" role="alert">
+			 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			   <span aria-hidden="true">&times;</span>
+			 </button>
+			 <strong>Error sending your query!!!</strong>
+		</div>
+		
+		
+		<!--CAROUSEL-->
+		<div id="carouselIndex" class="carousel slide" data-ride="carousel">
+			  <ol class="carousel-indicators" id="carousel-indicatorsTheme">
+		        <li data-target="#carouselIndex" data-slide-to="0" class="active"></li>
+		        <li data-target="#carouselIndex" data-slide-to="1"></li>
+		        <li data-target="#carouselIndex" data-slide-to="2"></li>
+		      </ol>
+		      <div class="carousel-inner" role="listbox">
+		        <div class="carousel-item active">
+		          <img class="d-block img-responsive" src="/static/imgs/tax2.jpg" th:src="@{/imgs/tax2.jpg}" alt="First slide" style="width: 100%; height: 500px;"/>
+		            <div class="carousel-caption">
+		            	<h3 id="h3Pay">Spanish Tax Model</h3>
+		            </div>
+		        </div>
+		        <div class="carousel-item">
+		          <img class="d-block img-responsive" src="/static/imgs/tax3.jpg" th:src="@{/imgs/tax3.jpg}" alt="Second slide" style="width: 100%; height: 500px;"/>
+		          	<div class="carousel-caption">
+		              <h3 id="h3Fill">Fill in the Form</h3>
+		            </div>
+		        </div>
+		         <div class="carousel-item">
+		          <img class="d-block img-responsive" src="/static/imgs/tax1.jpg" th:src="@{/imgs/tax1.jpg}" alt="Third slide" style="width: 100%; height: 500px;"/>
+		          	<div class="carousel-caption">
+		              <h3 id="h3Info">Spanish Tax Rates 2018</h3>
+		            </div>
+		        </div>
+
+		        <a class="carousel-control-prev" href="#carouselIndex" role="button" data-slide="prev">
+			        <span class="fas fa-arrow-alt-circle-left" aria-hidden="true" id="left1"></span>
+			        <span class="sr-only">Previous</span>
+			      </a>
+			      <a class="carousel-control-next" href="#carouselIndex" role="button" data-slide="next">
+			        <span class="fas fa-arrow-alt-circle-right" aria-hidden="true" id="right1"></span>
+			        <span class="sr-only">Next</span>
+			    </a>
+			</div>
+		</div>
+		<br>
+		<!--END CAROUSEL-->
+
+		<!--CARDS-->
+		<div id="card1" class="container-fluid">
+				<div class="card-deck">
+					<!--CARD 1-->
+				  			<div class="card">
+				    			<img class="card-img-top" id="tax4" src="/static/imgs/tax4.jpg" th:src="@{/imgs/tax4.jpg}" alt="Card image" style="width:100%">
+				    			<div class="card-body">
+				      				<h4 class="card-title">Spanish Tax Model</h4>
+				      				<p class="card-text">Learn a few more Tax Models that you can find in Spain and a little description about them.</p>
+				      				<a href="#" th:href="@{/models}" class="btn btn-success">Tax Models</a>
+				    			</div>
+				  			</div>
+					
+
+
+					<!--CARD 2-->
+					  		<div class="card">
+					    		<img class="card-img-top" id="tax5" src="/static/imgs/tax5.jpg" th:src="@{/imgs/tax5.jpg}" alt="Card image" style="width:100%">
+					    		<div class="card-body">
+					      			<h4 class="card-title">Fill in the Form 303</h4>
+					      			<p class="card-text">We have an updated Form 303 that you can use to complete requirements.</p>
+					      			<a href="#" th:href="@{/form303}" class="btn btn-success">Form 303</a>
+					    		</div>
+					  		</div>
+					
+					<!--CARD 3-->
+					  		<div class="card">
+					    		<img class="card-img-top" id="tax6" src="/static/imgs/tax6.jpg" th:src="@{/imgs/tax6.jpg}" alt="Card image" style="width:100%">
+					    		<div class="card-body">
+					      			<h4 class="card-title">Spanish Tax Rates 2018</h4>
+					      			<p class="card-text">Get Information from Tax Rates and Allowances for 2018.</p>
+					      			<a href="#" th:href="@{/taxRates}" class="btn btn-success">Tax Rates</a>
+					    		</div>
+					  		</div>
+				</div>	
+		</div>
+		<!--END CARDS-->
+		
+		
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	    <!-- JQUERY -->
+		<script src="/js/jquery.min.js"></script>
+
+		<!-- Popper.js -->
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+	    <!--JS-->
+    	<script src="/js/bootstrap.min.js"></script>
+    
+    	<!--JS BUNDLE-->
+    	<script src="/js/bootstrap.bundle.min.js"></script>
+
+	</body>
+	<br>
+	
+	
+	<footer id="footMain">
+		<p style="text-align: center"><b>Copyright 2018</b></p>
+			<p id="fecha" align="center">
+							<script> 
+							/*Define script to add date dynamically*/
+							var f = new Date(); 
+							document.getElementById("fecha").innerHTML = (f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear());
+							</script>
+		</p>
+	</footer>
+</html>
