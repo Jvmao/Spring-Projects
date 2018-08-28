@@ -66,16 +66,17 @@ public class AddData {
 		return mav;
 	}
 	
+	//Method to create report
 	@RequestMapping(value = "/report", method = RequestMethod.GET)
 	@ResponseBody
 	public void getRpt1(HttpServletResponse response) throws JRException, IOException, FileNotFoundException {
-		
 		System.out.println("Generating Report...");
 		String pdfName = "TaxReport";
 		JasperReport jasperReport;
-		String URL = "jdbc:mysql://localhost:3306/SpanishTaxdb?useSSL=false";
+		//Connection to DB
+		String URL = "jdbc:mysql://localhost:3306/SpanishTaxdb";
 		String USER = "root";
-		String PASS = "Naizuore1x";
+		String PASS = "root";
 		
 		
 		try {
