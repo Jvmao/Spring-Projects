@@ -16,7 +16,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/SpanishTaxdb?useSSL=false
     username: root
-    password: Naizuore1x
+    password: root
      
   jpa:
     show-sql: true
